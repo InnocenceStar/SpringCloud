@@ -1,5 +1,6 @@
 package com.qaq.springcloud.controller;
 
+import cn.hutool.core.util.IdUtil;
 import com.qaq.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,10 +26,19 @@ public class PaymentController {
         log.info("result"+s);
         return s;
     }
+    //演示服务降级
     @GetMapping("/payment/hystrix/timeout/{id}")
     public String paymentInfo_Timeout(@PathVariable("id") Integer id){
         String s = paymentService.paymentInfo_Timeout(id);
         log.info("result"+s);
+        return s;
+    }
+
+    //演示服务熔断
+    @GetMapping("/payment/hystrix/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id){
+        String s = paymentService.paymentCircuitBreaker(id);
+        log.info("===result===:"+s);
         return s;
     }
 }

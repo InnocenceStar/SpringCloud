@@ -29,7 +29,7 @@ public class OrderHystrixController {
 //    @HystrixCommand(fallbackMethod = "paymentInfo_TimeoutHandler",commandProperties = {
 //            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "1500")
 //    })
-    //默认服务降级的方法
+    //8008宕机，调用默认的全局fallback方法
     @HystrixCommand
     public String paymentInfo_Timeout(@PathVariable("id") Integer id){
         String s = paymentHystrixService.paymentInfo_Timeout(id);
@@ -38,7 +38,7 @@ public class OrderHystrixController {
     }
 
 
-    public String paymentInfo_TimeoutHandler(@PathVariable("id") Integer id){
+    public String paymentInfo_TimeoutHandler( Integer id){
         return "猛男哭泣，嘤嘤嘤";
     }
 
