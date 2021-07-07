@@ -10,6 +10,11 @@ spring:
       name: application #配置文件名称
       profile: dev #配置文件后缀
       uri: http://localhost:3344 #配置中心地址.综上，访问的地址为http://localhost:3344/master/application-dev.yml
+  rabbitmq:
+    host: localhost
+    port: 5672
+    password: guest
+    username: guest
 
 
 #暴露监控端点
