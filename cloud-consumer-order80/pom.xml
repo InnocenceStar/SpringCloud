@@ -11,6 +11,14 @@
 
     <artifactId>cloud-consumer-order80</artifactId>
     <dependencies>
+
+        <!--引入了sleuth+zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+
+
         <!--spring-cloud-starter-netflix-eureka-client提供了ribbon的gav坐标-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
