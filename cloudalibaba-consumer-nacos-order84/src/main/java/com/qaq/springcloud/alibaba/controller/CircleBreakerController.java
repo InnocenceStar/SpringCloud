@@ -2,6 +2,7 @@ package com.qaq.springcloud.alibaba.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.qaq.springcloud.alibaba.service.PaymentService;
 import com.qaq.springcloud.entity.CommonResult;
 import com.qaq.springcloud.entity.Payment;
 import org.springframework.beans.factory.annotation.Value;
@@ -60,6 +61,16 @@ public class CircleBreakerController {
     public CommonResult<Payment> blockHandler(@PathVariable Long id, BlockException e){
         Payment payment = new Payment(id, null);
         return new CommonResult<>(445, "block exception , sentinel ,qaq，e："+e.getMessage(),payment );
+    }
+
+    //================================openfeign====================================
+
+    @Resource
+    private PaymentService paymentService;
+
+    @GetMapping("/consumer/paymentSQL/{id}")
+    public CommonResult<Payment> paymentSQL(@PathVariable("id") Long id){
+        return paymentService.paymentSQL(id);
     }
 
 }
