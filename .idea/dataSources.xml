@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="springcloud@localhost" uuid="337df9d7-d842-4bbb-b762-fac378a1c940">
+    <data-source source="LOCAL" name="seata_order@localhost" uuid="337df9d7-d842-4bbb-b762-fac378a1c940">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/springcloud</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/seata_order</jdbc-url>
       <driver-properties>
         <property name="serverTimezone" value="UTC" />
       </driver-properties>
